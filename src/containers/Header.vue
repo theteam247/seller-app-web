@@ -4,14 +4,14 @@
       <el-col class="desktop hidden-xs-only">
         <el-card shadow="none">
           <a href="/">
-            <el-image src="/img/logo.png"></el-image>
+            <img src="@/assets/logo.png" />
           </a>
         </el-card>
       </el-col>
       <el-col class="mobile hidden-sm-and-up">
         <el-card shadow="always">
           <a href="/">
-            <el-image src="@/assets/logo.png"></el-image>
+            <img src="@/assets/logo.png" />
           </a>
         </el-card>
       </el-col>
