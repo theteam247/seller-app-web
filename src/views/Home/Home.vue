@@ -31,8 +31,9 @@ export default class Home extends Vue {
 
   async onSubmit(form: {}) {
     this.fullscreenLoading = true;
-    const res = await request.post("/applications", form);
-    this.fullscreenLoading = false;
+    const res = await request.post("/applications", form).finally(() => {
+      this.fullscreenLoading = false;
+    });
 
     if (res.data.success) {
       this.$router.push("/confirmation");

@@ -8,14 +8,16 @@ const request = axios.create({
 
 request.interceptors.response.use(response => {
   Object.values<string[]>(response.data.errors ?? {})
-    .reverse()
+    .slice(0, 1)
     .map(errors =>
-      errors.map(error => {
-        Message.error({
-          message: error,
-          type: "error",
-          showClose: true
-        });
+      errors.slice(0, 1).map(error => {
+        setTimeout(() => {
+          Message.error({
+            message: error,
+            type: "error",
+            showClose: true
+          });
+        })
       })
     );
   return response;
